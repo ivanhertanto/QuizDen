@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  quizden:
+    build: .
+    ports:
+      - "5000:5000"  # Map the container port to the host port
+    environment:
+      - NODE_ENV=production  # Set environment variables if needed
+    depends_on:
+      - mongo  # Ensure MongoDB starts before QuizDen
+
+  mongo:
+    image: mongo:latest  # Use the official MongoDB image
+    ports:
+      - "27017:27017"  # Expose MongoDB port
+    volumes:
+      - mongo_data:/data/db  # Persist data
+
+volumes:
+  mongo_data:
