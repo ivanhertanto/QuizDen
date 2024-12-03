@@ -3,6 +3,8 @@ version: '3.8'
 services:
   quizden:
     build: .
+    image: quizden:latest
+    container_name: quizden-server
     ports:
       - "5000:5000"  # Map the container port to the host port
     environment:
