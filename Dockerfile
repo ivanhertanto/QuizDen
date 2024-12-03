@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Finally, serve your app
-CMD ["node", "app.js"]  # Change 'app.js' to your actual entry file if different
+CMD ["npm", "run", "start"] 
